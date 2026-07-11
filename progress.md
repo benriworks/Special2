@@ -15,7 +15,7 @@ Original prompt: おまかせであなたの力を最大限に活用して、み
 - [x] Build the full UI, share/save/fullscreen flows, and accessibility fallbacks.
 - [x] Add architecture documentation.
 - [x] Run build and Playwright verification.
-- [ ] Publish and verify the production URL (Pages is enabled; commit/deploy pending).
+- [x] Publish and verify the production URL.
 
 ## Notes
 
@@ -29,3 +29,10 @@ Original prompt: おまかせであなたの力を最大限に活用して、み
 - Added single-flight audio/microphone ownership, stale-stream cleanup, GPU attribute disposal, accessible mobile labels, hidden-control focus isolation, dynamic reduced-motion, and viewport drift self-healing.
 - Added regression coverage for 320x568 portrait, 390x844 fine/coarse pointer paths, 844x390 landscape, late microphone cancellation, audio start/stop, and viewport pinning.
 - GitHub Pages was enabled for `benriworks/Special2` with `build_type=workflow` before the first deployment.
+- Published at https://benriworks.github.io/Special2/ through PR #1 and the locale-independent CI follow-up PR #2.
+- Production checks: GitHub Actions build/deploy succeeded, HTTPS returned 200, the deployed asset hash matched the build, and desktop/mobile screenshots plus an interactive state probe passed.
+
+## Remaining TODOs
+
+- None required for the requested release.
+- Optional future optimization: replace `preserveDrawingBuffer` with an explicit export render target on very low-power mobile GPUs.
