@@ -31,7 +31,11 @@ try {
     },
   });
   browser = await chromium.launch({ headless: true });
-  page = await browser.newPage({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
+  page = await browser.newPage({
+    viewport: { width: 1440, height: 900 },
+    deviceScaleFactor: 1,
+    locale: "en-US",
+  });
   page.on("console", (message) => {
     if (message.type() === "error" || message.type() === "warning") {
       const text = message.text();
@@ -46,6 +50,9 @@ try {
 
   await page.goto(baseUrl, { waitUntil: "networkidle" });
   await page.waitForFunction(() => typeof window.render_game_to_text === "function");
+  if ((await page.locator("html").getAttribute("lang")) !== "ja") {
+    await page.locator('[data-action="language"]').click();
+  }
   await page.screenshot({ path: artifactPath("intro-desktop.png") });
 
   check(await page.locator("#word-form").isVisible(), "word form is not visible on the intro screen");
