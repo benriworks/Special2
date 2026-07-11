@@ -1,0 +1,23 @@
+{
+  "name": "kotodama-living-word",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Turn a word into a unique living 3D constellation.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173 --strictPort",
+    "verify": "npm run build && node scripts/verify.mjs",
+    "verify:browser": "node scripts/verify.mjs"
+  },
+  "dependencies": {
+    "three": "0.185.1"
+  },
+  "devDependencies": {
+    "@types/three": "0.185.1",
+    "playwright": "1.61.1",
+    "typescript": "7.0.2",
+    "vite": "8.1.4"
+  }
+}
