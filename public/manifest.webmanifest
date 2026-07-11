@@ -1,0 +1,17 @@
+{
+  "name": "KOTODAMA — ことばの生命体",
+  "short_name": "KOTODAMA",
+  "description": "Turn a word into a unique living constellation.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#eeeae0",
+  "theme_color": "#eeeae0",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
